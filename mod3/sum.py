@@ -5,19 +5,19 @@
 
 from typing import NewType
 
-Input = NewType("UserInput", int | str)
 
-
-def getInput(input: Input, prevInputs):
-    if input != type(int) & input == "":
-        # calcResults(prevInputs)
+def getInput(userInput, prevInputs):
+    def calcResults(userInputs):
+        for i in userInputs:
+            print(userInputs[i])
+    if userInput == "":
+        calcResults(prevInputs)
         return "You have reached the end, congrats?"
-    if input != type(int) & input != "":
-        return "You tried entering something that was neither 0-9 not Enter and broke the program, try again"
+    if type(userInput) != int & type(userInput) != str:
+        return "You tried entering something that was neither 0-9 nor Enter and broke the program, try again"
     else:
         prevInputs.append(input)
-        nextNumber = int(
-            input("Enter a nunber or press Enter to exit the loop"))
+        nextNumber = input("Enter a nunber or press Enter to exit the loop")
         getInput(nextNumber, prevInputs)
 
 

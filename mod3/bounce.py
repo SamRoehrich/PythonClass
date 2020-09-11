@@ -1,10 +1,7 @@
 # given the drop height, bounciness index and number of bounces
 # calculate the total distance the ball will travel
 
-# UNDONE: LAST INPUT 25, .5, 3 OUTPUT: 66.6666667
-
-
-def calcBounce(height, bounceIndex, numBounces):
+def calc_bounce(height, bounceIndex, numBounces):
     res = 0.0
     i = 0
     while i < numBounces:
@@ -22,6 +19,6 @@ dropHeight = float(input("Enter the drop height: "))
 bouncinessIndex = float(input("Enter the bounciness index: "))
 numOfBounces = int(input("How many times can the ball bounce: "))
 
-totalDistance = calcBounce(dropHeight, bouncinessIndex, numOfBounces)
+totalDistance = calc_bounce(dropHeight, bouncinessIndex, numOfBounces)
 
 print("The total distance traveled is: " + str(totalDistance) + " units.")
